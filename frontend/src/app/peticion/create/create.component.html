@@ -3,7 +3,7 @@
   
     <a href="#" routerLink="/peticion/index" class="btn btn-primary">Back</a>
         
-    <form [formGroup]="form" (ngSubmit)="submit()">
+    <form [formGroup]="form" (ngSubmit)="submit(form)">
   
         <div class="form-group">
             <label for="titulo">Titulo:</label>
@@ -16,7 +16,6 @@
                 <div *ngIf="f['titulo'].errors && f['titulo'].errors['required']">titulo is required.</div>
             </div>
         </div>
-  
         <div class="form-group">
             <label for="descripcion">descripcion</label>
             <textarea 
@@ -42,57 +41,34 @@
             </div>
         </div>
   
-        <div class="form-group">
-            <label for="firmantes">firmantes</label>
-            <textarea 
-                formControlName="firmantes"
-                id="firmantes" 
-                type="number" 
-                class="form-control">
-            </textarea>
-            <div *ngIf="f['firmantes'].touched && f['firmantes'].invalid" class="alert alert-danger">
-                <div *ngIf="f['firmantes'].errors && f['firmantes'].errors['required']">firmantes is required.</div>
-            </div>
-        </div>
-
-        <div class="form-group">
-            <label for="estado">estado:</label>
-            <input 
-                formControlName="estado"
-                id="estado" 
-                type="text" 
-                class="form-control">
-            <div *ngIf="f['estado'].touched && f['estado'].invalid" class="alert alert-danger">
-                <div *ngIf="f['estado'].errors && f['estado'].errors['required']">estado is required.</div>
-            </div>
-        </div>
+        
   
         <div class="form-group">
-            <label for="user_id">user_id</label>
-            <textarea 
-                formControlName="user_id"
-                id="user_id" 
-                type="number" 
-                class="form-control">
-            </textarea>
-            <div *ngIf="f['user_id'].touched && f['user_id'].invalid" class="alert alert-danger">
-                <div *ngIf="f['user_id'].errors && f['user_id'].errors['required']">user_id is required.</div>
-            </div>
-        </div>
-
-        <div class="form-group">
-            <label for="categoria_id">categoria_id</label>
-            <textarea 
+            <label for="categoria_id">categoria_id:</label>
+            <input 
                 formControlName="categoria_id"
                 id="categoria_id" 
-                type="number" 
+                type="text" 
                 class="form-control">
-            </textarea>
             <div *ngIf="f['categoria_id'].touched && f['categoria_id'].invalid" class="alert alert-danger">
-                <div *ngIf="f['categoria_id'].errors && f['categoria_id'].errors['required']">categoria_id is required.</div>
+                <div *ngIf="f['categoria_id'].errors && f['categoria_id'].errors['categoria_id']">Categoria is required.</div>
             </div>
         </div>
-  
+        
+        <div class="form-group">
+            <label for="file">File: </label>
+            <input 
+                formControlName="file"
+                id="file" 
+                type="file" 
+                class="form-control"
+                (change)="onSelectFile($event)">
+            
+            <div *ngIf="f['file'].touched && f['file'].invalid" class="alert alert-danger">
+                <div *ngIf="f['file'].errors && f['file'].errors['required']">file is required.</div>
+            </div>
+        </div>
+        <img [src]="imageSrc" *ngIf="imageSrc" style="height: 300px; width: 500px;" >
         <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Submit</button>
     </form>
 </div>

@@ -46,56 +46,19 @@
 
         
            
+       
+        
         <div class="form-group">
-            <label for="firmantes">firmantes</label>
+            <label for="categoria">categoria</label>
             <textarea 
-                formControlName="firmantes"
-                id="firmantes" 
-                type="number" 
-                [(ngModel)]="peticion.firmantes"
-                class="form-control">
-            </textarea>
-            <div *ngIf="f['firmantes'].touched && f['firmantes'].invalid" class="alert alert-danger">
-                <div *ngIf="f['firmantes'].errors && f['firmantes'].errors['required']">firmantes is required.</div>
-            </div>
-        </div>
-
-        <div class="form-group">
-            <label for="estado">estado:</label>
-            <input 
-                formControlName="estado"
-                id="estado" 
-                type="text" 
-                [(ngModel)]="peticion.estado"
-                class="form-control">
-            <div *ngIf="f['estado'].touched && f['estado'].invalid" class="alert alert-danger">
-                <div *ngIf="f['estado'].errors && f['estado'].errors['required']">estado is required.</div>
-            </div>
-        </div>
-           
-        <div class="form-group">
-            <label for="user_id">user_id:</label>
-            <input 
-                formControlName="user_id"
-                id="user_id" 
-                type="number" 
-                [(ngModel)]="peticion.user_id"
-                class="form-control">
-            <div *ngIf="f['user_id'].touched && f['user_id'].invalid" class="alert alert-danger">
-                <div *ngIf="f['user_id'].errors && f['user_id'].errors['required']">user_id is required.</div>
-            </div>
-        </div>
-        <div class="form-group">
-            <label for="categoria_id">categoria_id</label>
-            <textarea 
-                formControlName="categoria_id"
-                id="categoria_id" 
+                formControlName="categoria"
+                id="categoria" 
                 type="number" 
                 [(ngModel)]="peticion.categoria_id"
                 class="form-control">
             </textarea>
-            <div *ngIf="f['categoria_id'].touched && f['categoria_id'].invalid" class="alert alert-danger">
-                <div *ngIf="f['categoria_id'].errors && f['categoria_id'].errors['required']">categoria_id is required.</div>
+            <div *ngIf="f['categoria'].touched && f['categoria'].invalid" class="alert alert-danger">
+                <div *ngIf="f['categoria'].errors && f['categoria'].errors['required']">categoria_id is required.</div>
             </div>
         </div>
 

@@ -38,8 +38,10 @@ export class EditComponent implements OnInit {
     }); 
       
     this.form = new FormGroup({
-      title: new FormControl('', [Validators.required]),
-      body: new FormControl('', Validators.required)
+      titulo: new FormControl('', [Validators.required]),
+      descripcion: new FormControl('', Validators.required),
+      destinatario: new FormControl('', [Validators.required]),
+      categoria: new FormControl('', Validators.required)
     });
   }
     

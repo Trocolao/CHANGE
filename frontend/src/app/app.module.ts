@@ -10,6 +10,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { AuthInterceptor } from './shared/auth-interceptor.service';
 import { PostModule } from './post/post.module';
 import { PeticionModule } from './peticion/peticion.module';
+import { HomeComponent } from './home/home.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ declarations: [
 AppComponent,
 SigninComponent,
 SignupComponent,
-UserProfileComponent
+UserProfileComponent,
+HomeComponent
 
 ],
 imports: [

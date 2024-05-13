@@ -1,0 +1,35 @@
+<div class="container" style="margin: 100px;">
+    <h1 class="mt-4 mb-4">Descubrir peticiones</h1>
+    
+      <a href="#" routerLink="/peticion/create/" class="btn btn-success">Create New Peticion</a>
+      
+      <section>
+        <tr *ngFor="let peticion of peticiones">
+               <div class="card mb-4">
+                   <div class="row g-0">
+                       
+                       <div class="col-md-9">
+                           <div class="card-body">
+                               <h4 class="card-title">{{ peticion.titulo}}</h4>
+                               <p class="card-text">{{ peticion.descripcion}}</p>
+                               <p class="card-text">{{ peticion.destinatario}}</p>
+                               <p class="card-text">{{ peticion.firmantes}}</p>
+                               <p class="card-text">{{ peticion.estado}}</p>
+                               <p class="type-s ptx">
+                                   <span>
+                                       <strong>{{ peticion.firmantes }} personas han firmado</strong>
+                                       <span class="type-weak">de un objetivo de 300.000 firmas</span>
+                                   </span>
+                               </p>
+                               <a href="#" [routerLink]="['/peticion/', peticion.id, 'view']"  class="btn btn-danger" style="margin: 5px;">Entrar</a>
+                               <a href="#" [routerLink]="['/peticion/', peticion.id, 'edit']"  class="btn btn-danger" style="margin: 5px;">Editar</a>
+                               <button type="button" (click)="deletePeticion(peticion.id)" class="btn btn-danger">Delete</button>
+                               
+                           </div>
+                       </div>
+                   </div>
+               </div>
+              </tr>
+       </section>
+   </div>
+   

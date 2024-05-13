@@ -1,10 +1,159 @@
 <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm fixed-top">
-  <h5 class="my-0 mr-md-auto font-weight-normal">Laravel Angular JWT Auth</h5>
+  <h5 class="my-0 mr-md-auto font-weight-normal" routerLink="/home">Laravel Angular JWT Auth</h5>
   <nav class="my-2 my-md-0 mr-md-3">
-    <a class="p-2 text-dark" routerLink="/profile" *ngIf="isSignedIn">User Profile</a>
-    <a class="p-2 text-dark" *ngIf="!isSignedIn" routerLink="/login">Log in</a>
-    <a class="p-2 text-dark" routerLink="/register">Register</a>
+    
+    <form class="d-flex md-2">
+      <a class="nav-link fs-5 m-2 link-danger" *ngIf="isSignedIn" routerLink="/peticion/create">Crear una petición</a>
+      <a class="nav-link fs-5 m-2 link-danger" *ngIf="isSignedIn" routerLink="/peticion/index">Peticiones</a>
+      <a class="nav-link fs-5 m-2 link-danger" *ngIf="isSignedIn" routerLink="/peticion/myindex">Mis Peticiones</a>
+      <a class="nav-link fs-5 m-2 link-danger" *ngIf="isSignedIn" routerLink="/peticion/myfirmas">Mis firmas</a>
+      <a class="nav-link fs-5 m-2 link-danger" *ngIf="!isSignedIn" routerLink="/register">Register</a>
+      <a class="nav-link fs-5 m-2 link-danger" *ngIf="!isSignedIn" routerLink="/login">Login</a>
+      
+      <a class="nav-link fs-5 m-2 link-danger" *ngIf="isSignedIn" (click)="signOut()" routerLink="/home">Logout</a>
+      <a class="nav-link fs-5 m-2 link-danger" *ngIf="isSignedIn" routerLink="/profile">User Profile</a>
+    </form>
+   
+
   </nav>
-  <button class="btn btn-outline-primary" (click)="signOut()" *ngIf="isSignedIn">Log out</button>
 </div>
 <router-outlet></router-outlet>
+<footer class="text-center text-lg-start bg-light text-muted">
+  <!-- Section: Social media -->
+  <section
+      class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom"
+  >
+
+
+      <!-- Right -->
+      <div>
+          <a href="" class="me-4 text-reset">
+              <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="" class="me-4 text-reset">
+              <i class="fab fa-twitter"></i>
+          </a>
+          <a href="" class="me-4 text-reset">
+              <i class="fab fa-google"></i>
+          </a>
+          <a href="" class="me-4 text-reset">
+              <i class="fab fa-instagram"></i>
+          </a>
+          <a href="" class="me-4 text-reset">
+              <i class="fab fa-linkedin"></i>
+          </a>
+          <a href="" class="me-4 text-reset">
+              <i class="fab fa-github"></i>
+          </a>
+      </div>
+      <!-- Right -->
+  </section>
+  <!-- Section: Social media -->
+
+  <!-- Section: Links  -->
+  <section class="">
+      <div class="container text-center text-md-start mt-5">
+
+          <!-- Grid row -->
+          <div class="row mt-3">
+
+
+              <!-- Grid column -->
+              <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                  <!-- Content -->
+                  <h6 class="text-uppercase fw-bold mb-4">
+                      ACERCA DE
+                  </h6>
+                  <p>
+                      <a href="#!" class="text-reset">Sobre Change.org</a>
+                  </p>
+                  <p>
+                      <a href="#!" class="text-reset">Impacto</a>
+                  </p>
+                  <p>
+                      <a href="#!" class="text-reset">Empleo</a>
+                  </p>
+                  <p>
+                      <a href="#!" class="text-reset">Equipo</a>
+                  </p>
+              </div>
+              <!-- Grid column -->
+
+              <!-- Grid column -->
+              <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                  <!-- Links -->
+                  <h6 class="text-uppercase fw-bold mb-4">
+                      COMUNIDAD
+                  </h6>
+                  <p>
+                      <a href="#!" class="text-reset">Blog</a>
+                  </p>
+                  <p>
+                      <a href="#!" class="text-reset">Prensa</a>
+                  </p>
+              </div>
+              <!-- Grid column -->
+
+              <!-- Grid column -->
+              <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                  <!-- Links -->
+                  <h6 class="text-uppercase fw-bold mb-4">
+                      AYUDA
+                  </h6>
+                  <p>
+                      <a href="#!" class="text-reset">Ayuda</a>
+                  </p>
+                  <p>
+                      <a href="#!" class="text-reset">Guías</a>
+                  </p>
+                  <p>
+                      <a href="#!" class="text-reset">Privacidad</a>
+                  </p>
+                  <p>
+                      <a href="#!" class="text-reset">Políticas</a>
+                  </p>
+                  <p>
+                      <a href="#!" class="text-reset">Cookies</a>
+                  </p>
+              </div>
+              <!-- Grid column -->
+
+
+
+
+
+              <!-- Grid column -->
+              <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                  <!-- Links -->
+                  <h6 class="text-uppercase fw-bold mb-4">
+                      REDES SOCIALES
+                  </h6>
+                  <p>
+                      <a href="#!" class="text-reset">Twitter</a>
+                  </p>
+                  <p>
+                      <a href="#!" class="text-reset">Facebook</a>
+                  </p>
+                  <p>
+                      <a href="#!" class="text-reset">Instagram</a>
+                  </p>
+              </div>
+              <!-- Grid column -->
+          </div>
+          <!-- Grid row -->
+      </div>
+  </section>
+
+  <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+      © 2022, Change.org, PBC
+      <a class="text-reset fw-bold" href="https://change.org/">Change.org</a>
+  </div>
+
+</footer>
+
+<!-- endinject -->
+<!-- Plugin js for this page-->
+<!-- End plugin js for this page-->
+
+
+
